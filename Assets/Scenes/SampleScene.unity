@@ -1577,7 +1577,8 @@ GameObject:
   - component: {fileID: 1480973722}
   - component: {fileID: 1480973721}
   - component: {fileID: 1480973718}
-  - component: {fileID: 1480973723}
+  - component: {fileID: 1480973725}
+  - component: {fileID: 1480973726}
   - component: {fileID: 1480973724}
   m_Layer: 3
   m_Name: Player
@@ -1645,8 +1646,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480973711}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.62, y: -3.74, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.008088305, w: 0.9999673}
+  m_LocalPosition: {x: 2.51, y: -3.7, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1654,7 +1655,7 @@ Transform:
   - {fileID: 785433183}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.927}
 --- !u!50 &1480973714
 Rigidbody2D:
   serializedVersion: 4
@@ -1770,21 +1771,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07, y: 0.18}
   m_EdgeRadius: 0
---- !u!114 &1480973723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480973711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03aa49ebf31efc84683b5606824f4849, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1480973724}
-  moveSpeed: 5
-  jumpForce: 10
 --- !u!95 &1480973724
 Animator:
   serializedVersion: 5
@@ -1805,6 +1791,71 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1480973725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480973711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ad51f6be7f98141bedc634a1690b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MovementSmoothing: 0.05
+  m_AirControl: 1
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 55
+  m_GroundCheck: {fileID: 785433183}
+  m_CeilingCheck: {fileID: 142087088}
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1480973726}
+        m_TargetAssemblyTypeName: PlayerBasicMovement, Assembly-CSharp
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnAttackEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1480973726}
+        m_TargetAssemblyTypeName: PlayerBasicMovement, Assembly-CSharp
+        m_MethodName: OnAttacking
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1480973726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480973711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03aa49ebf31efc84683b5606824f4849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1480973725}
+  animator: {fileID: 1480973724}
+  moveSpeed: 20
+  jumpForce: 10
 --- !u!1 &1537799870
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,50 +4,73 @@ using UnityEngine;
 
 public class PlayerBasicMovement : MonoBehaviour
 {
+    public CharacterController2D controller;
     public Animator animator;
 
-    public float moveSpeed = 5f;
+    public float moveSpeed = 40f;
     public float jumpForce = 10f;
 
     private Rigidbody2D rb;
-    private bool directionLeft = false;
 
-    // Start is called before the first frame update
+    float horizontalMove = 0f;
+    bool jump = false;
+    bool attack = false;
+    bool strikeDown = false;
+
+     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
+        horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
 
-        animator.SetFloat("speed",Mathf.Abs(horizontal));
+        animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
-        Vector2 movement = new Vector2(horizontal * moveSpeed, rb.velocity.y);
-        rb.velocity = movement;
 
-        // flip sprite when player changes direction (right)
-        if(horizontal > 0 && !directionLeft){
-            flip();
-        }
-        else if (horizontal < 0 && directionLeft){
-            flip();
-        }
-
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+        
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            jump = true;
+            animator.SetBool("isJumping", true);
+      
         }
+
+        if (Input.GetKeyDown(KeyCode.S)){
+
+            if (!attack) {
+                attack = strikeDown = true;
+            }
+            //animator.SetBool("isStrikeDown", true);
+        } else if (Input.GetKeyUp(KeyCode.S))
+        {
+            attack = strikeDown = false;
+        }
+
+
+    
+    }
+
+    public void OnLanding() {
+        animator.SetBool("isJumping", false);
         
     }
 
-    // flip sprite horizontally
-    void flip(){
-        directionLeft = !directionLeft;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+    public void OnAttacking (bool isAttacking)
+    {
+        animator.SetBool("isStrikeDown", isAttacking);
+    }
+
+
+    void FixedUpdate() {
+        // move character
+        controller.Move(horizontalMove * Time.fixedDeltaTime, strikeDown);
+        jump = false;
+        // attack = false;
     }
 }
