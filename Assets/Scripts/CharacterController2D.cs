@@ -28,7 +28,10 @@ public class CharacterController2D : MonoBehaviour
 	public class BoolEvent : UnityEvent<bool> { }
 
 	public BoolEvent OnAttackEvent;
+	private bool m_wasAttacking = false;
 	private bool m_wasStrikeDown = false;
+	private bool m_wasJab = false;
+	
 
 
 
@@ -66,18 +69,17 @@ public class CharacterController2D : MonoBehaviour
 	}
 
 
-	public void Move(float move, bool strikeDown)
+	public void Move(float move, bool attack)
 	{
 
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
-
-			// If attacking
-			if(strikeDown)
+			// if attacking
+			if(attack)
 			{
-				if(!m_wasStrikeDown){
-					m_wasStrikeDown = true;
+				if(!m_wasAttacking){
+					m_wasAttacking = true;
 					OnAttackEvent.Invoke(true);
 				}
 			}
@@ -102,11 +104,9 @@ public class CharacterController2D : MonoBehaviour
 
 	public void OnAttackEnd()
 	{
-		m_wasStrikeDown = false;
+		m_wasAttacking = false;
 		OnAttackEvent.Invoke(false);
 	}
-
-
 
 	private void Flip()
 	{
