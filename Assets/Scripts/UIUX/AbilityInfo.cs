@@ -12,8 +12,10 @@ public class AbilityInfo : ScriptableObject{
     public int pointCost;
     //Displayed on the ability card itself
     public string shortDesc;
+    //How many of this ability should the shop start with?
+    public int startingStock;
     //Displayed on the ability's "info" page
-    [Multiline(10)]
+    [TextAreaAttribute] 
     public string longDesc;
     //image which appears on the ability card
     public Sprite spr;

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6196ba14ad91041adf5d58136d73f1, type: 3}
   m_Name: ComboPlus
   m_EditorClassIdentifier: 
-  abilityName: 
-  internalName: 
-  pointCost: 0
-  shortDesc: 
-  longDesc: 
+  abilityName: Combo Plus
+  internalName: comboUp
+  pointCost: 1000
+  shortDesc: Adds an additional hit to ground combo.
+  longDesc: When equipped, this ability adds one more hit (for every instance equipped)
+    to a grounded combo.
+  spr: {fileID: 0}
