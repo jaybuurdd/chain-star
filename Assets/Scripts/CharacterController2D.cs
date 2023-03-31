@@ -21,19 +21,16 @@ public class CharacterController2D : MonoBehaviour
 	[Space]
 
 	public UnityEvent OnLandEvent;
-
 	
 
-	[System.Serializable]
-	public class BoolEvent : UnityEvent<bool> { }
+	// [System.Serializable]
+	// public class BoolEvent : UnityEvent<bool> { }
 
-	public BoolEvent OnAttackEvent;
+	public UnityEvent OnAttackEvent;
 	private bool m_wasAttacking = false;
+	private bool m_isAttacking = false;
 	private bool m_wasStrikeDown = false;
 	private bool m_wasJab = false;
-	
-
-
 
 	private void Awake()
 	{
@@ -43,9 +40,7 @@ public class CharacterController2D : MonoBehaviour
 			OnLandEvent = new UnityEvent();
 		
 		if(OnAttackEvent == null)
-			OnAttackEvent = new BoolEvent();
-
-		
+			OnAttackEvent = new UnityEvent();		
 	}
 
 
@@ -69,20 +64,22 @@ public class CharacterController2D : MonoBehaviour
 	}
 
 
-	public void Move(float move, bool attack)
+	public void Move(float move)
 	{
 
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
 			// if attacking
-			if(attack)
-			{
-				if(!m_wasAttacking){
-					m_wasAttacking = true;
-					OnAttackEvent.Invoke(true);
-				}
-			}
+			// if(attack)
+			// {
+			// 	if (!m_wasAttacking)
+			// 	{
+			// 		Debug.Log("Attacking event");
+			// 		//m_wasAttacking = true;
+			// 		OnAttackEvent.Invoke();
+			// 	}
+			// }
 
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
@@ -102,11 +99,12 @@ public class CharacterController2D : MonoBehaviour
 
 	}
 
-	public void OnAttackEnd()
-	{
-		m_wasAttacking = false;
-		OnAttackEvent.Invoke(false);
-	}
+	// public void OnAttackEnd()
+	// {
+	// 	Debug.Log("Attack ended!");
+	// 	//m_wasAttacking = false;
+	// 	OnAttackEvent.Invoke();
+	// }
 
 	private void Flip()
 	{

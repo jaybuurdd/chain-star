@@ -14,16 +14,17 @@ public class PlayerBasicMovement : MonoBehaviour
 
     float horizontalMove = 0f;
     bool jump = false;
+    private bool isAttacking = false;
     bool attack = false;
     bool strikeDown = false;
     bool jab = false;
+    bool comboStrike = false;
 
      // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
 
     // Update is called once per frame
     void Update()
@@ -47,27 +48,35 @@ public class PlayerBasicMovement : MonoBehaviour
         {
         
             if (!attack) {
+                
                 attack = strikeDown = true;
+                OnAttacking();
             }
-            //animator.SetBool("isStrikeDown", true);
-        } else if (Input.GetKeyUp(KeyCode.Z))
-        {
             attack = strikeDown = false;
-        }
+            //animator.SetBool("isStrikeDown", true);
+        } 
 
         // if jab attack
         if (Input.GetKeyDown(KeyCode.X))
         {
             if(!attack) {
+                
                 attack = jab = true;
+                OnAttacking();
             }
-        } else  if (Input.GetKeyUp(KeyCode.X))
-        {
             attack = jab = false;
+        } 
+
+        // if combo strike
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            if(!attack) {
+                attack = comboStrike = true;
+                OnAttacking();
+            }
+
+            attack = comboStrike = false;
         }
-
-
-    
     }
 
     public void OnLanding() {
@@ -75,24 +84,41 @@ public class PlayerBasicMovement : MonoBehaviour
         
     }
 
-    public void OnAttacking (bool isAttacking)
+    public void OnAttacking ()
     {
-        animator.SetBool("isAttack", isAttacking);
-
-        if(attack == strikeDown){
-            animator.SetBool("isStrikeDown", isAttacking);
+        Debug.Log("Attacking: " + attack);
+        if(attack && strikeDown){
+            Debug.Log("You striked!");
+            animator.SetBool("isStrikeDown", true);
         }
-        if(attack == jab){
-            animator.SetBool("isJab", isAttacking);
+        if(attack && jab){
+            Debug.Log("You jabbed!");
+            animator.SetBool("isJab", true);
         }
-      
+        if(attack && comboStrike){
+            Debug.Log("You combo striked!");
+            animator.SetBool("isComboStrike",true);
+        }
     }
 
+    public void OnAttackEnd()
+	{
+        
+        if(!attack && !strikeDown)
+            animator.SetBool("isStrikeDown", false);
+        if(!attack && !jab)
+            animator.SetBool("isJab", false);
+        if(!attack && !comboStrike)
+            animator.SetBool("isComboStrike", false);
+		//m_wasAttacking = false;
+		//OnAttackEvent.Invoke();
+	}
 
+    
     void FixedUpdate() {
         // move character
-        controller.Move(horizontalMove * Time.fixedDeltaTime, attack);
+        controller.Move(horizontalMove * Time.fixedDeltaTime);
         jump = false;
-        // attack = false;
+        attack = false;
     }
 }
