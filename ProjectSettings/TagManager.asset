@@ -15,7 +15,7 @@ TagManager:
   - UI
   - Hitbox
   - Ball
-  - 
+  - Border
   - 
   - 
   - 
@@ -45,4 +45,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1924468249
+    locked: 0
+  - name: Canvas
+    uniqueID: 2064794245
     locked: 0
