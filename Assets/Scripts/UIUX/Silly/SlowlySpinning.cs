@@ -7,14 +7,14 @@ public class SlowlySpinning : MonoBehaviour
     [SerializeField]
     bool counterclockwise;
     [SerializeField]
-    float spinfactor = 1;
+    public float spinfactor = 1;
     // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        transform.Rotate(Vector3.forward* (counterclockwise ? -1 : 1) * Time.deltaTime *2 * spinfactor);
+        InvokeRepeating("BigSpin", 0.0f,3.0f);
     }
 
     public void BigSpin(){
-        
+        transform.LeanRotate(transform.eulerAngles + new Vector3(0,0, spinfactor), 3.0f);
     }
 }

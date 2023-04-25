@@ -14,15 +14,30 @@ public class TitleScreenDriver : MonoBehaviour
     void Start()
     {
         versionText.text = "ver. " + Application.version;
+        starButtonsCG.alpha = 0.0f;
         MainToTitle();
     }
     void MainToTitle(){
+        StartCoroutine(StarFlyOff());
         CrazySpin();
         screenNum = 0;
         backableScreen = true;
         inhale = true;
         titleCG.LeanAlpha(1.0f,1.5f);
         pressStartCG.alpha = 0.0f;
+        
+    }
+    void TitleToMain(){
+        CrazySpin();
+        screenNum = 1;
+        backableScreen = true;
+        StopCoroutine(PressStartFlash());
+        starButtonsCG.alpha = 1.0f;
+        StartCoroutine(StarFlyIn());
+        titleCG.LeanAlpha(0.0f, 0.5f);
+        pressStartCG.alpha = 0.0f;
+       
+        
     }
     IEnumerator PressStartFlash(){
         if(inhale) pressStartText.text = "Press Start!";
@@ -33,15 +48,33 @@ public class TitleScreenDriver : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         inhale = !inhale;
     }
+    IEnumerator StarFlyOff(){
+        starButtonsCG.gameObject.LeanMoveLocalX(-3000,1.75f).setEaseInQuart();
+        yield return new WaitForSecondsRealtime(2.0f);
+    }
+    IEnumerator StarFlyIn(){
+        starButtonsCG.gameObject.LeanMoveLocalX(0,1.75f).setEaseOutElastic();
+        yield return new WaitForSecondsRealtime(2.0f);
+    }
 
-    void TitleToMain(){
-        screenNum = 1;
-        backableScreen = true;
-        StopCoroutine(PressStartFlash());
-        titleCG.LeanAlpha(0.0f, 1.5f);
-        pressStartCG.alpha = 0.0f;
-        starButtonsCG.LeanAlpha(1.0f, 1.5f);
-        CrazySpin();
+    IEnumerator StarConfirmFlash(){
+        
+        for(int i = 3; i > 0; i--) {
+            StartCoroutine(StarSingleFlash());
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
+
+    IEnumerator StarSingleFlash(){
+        starButtonsCG.LeanAlpha(0.5f,0.15f);
+        yield return new WaitForSeconds(0.15f);
+        starButtonsCG.LeanAlpha(1.0f,0.15f);
+        yield return new WaitForSeconds(0.15f);
+    }
+
+    public void NewGameButton(){
+        StartCoroutine(StarConfirmFlash());
+        //Invoke("DipToBlack", 2.0f);
     }
 
     // Update is called once per frame
@@ -55,11 +88,15 @@ public class TitleScreenDriver : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape) && backableScreen){ BackScreen();}
     }
 
-    void CrazySpin(){
-        theReallyBigStar.LeanRotateZ(theReallyBigStar.rotation.z + 480.0f, 5.0f).setEaseOutQuad();
+    IEnumerator CrazySpin(){
+        SlowlySpinning ss = theReallyBigStar.GetComponent<SlowlySpinning>();
+        float f = ss.spinfactor;
+        ss.spinfactor = 30.0f;
+        yield return new WaitForSecondsRealtime(3.0f);
+        ss.spinfactor = f;
     }
 
-    void QuitAll(){
+    public void QuitAll(){
         //TODO - add confirm dialogue to quitting
         Debug.Log("Attempted quit.");
         Application.Quit(); 
