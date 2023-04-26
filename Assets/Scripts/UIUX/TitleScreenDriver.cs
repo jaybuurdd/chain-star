@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class TitleScreenDriver : MonoBehaviour
@@ -8,6 +9,7 @@ public class TitleScreenDriver : MonoBehaviour
     public TMP_Text versionText, pressStartText;
     public CanvasGroup titleCG, pressStartCG, starButtonsCG;
     public Transform theReallyBigStar;
+    public BlackScreen bs, openingTitle;
     bool inhale, backableScreen;
     int screenNum;
     // Start is called before the first frame update
@@ -15,12 +17,23 @@ public class TitleScreenDriver : MonoBehaviour
     {
         versionText.text = "ver. " + Application.version;
         starButtonsCG.alpha = 0.0f;
+        screenNum = -1;
+        bs.Invoke("Toggle",3.0f);
+        StartCoroutine(TitleReveal());
         MainToTitle();
+    }
+
+    IEnumerator TitleReveal(){
+        openingTitle.GetComponent<CanvasGroup>().LeanAlpha(1.0f,1.0f);
+        openingTitle.Invoke("Toggle",3.0f);
+        yield return new WaitForSecondsRealtime(5.0f);
+        screenNum = 0;
+        Destroy(openingTitle.gameObject);//no longer needed
     }
     void MainToTitle(){
         StartCoroutine(StarFlyOff());
         CrazySpin();
-        screenNum = 0;
+        if(screenNum != -1) screenNum = 0;//if waiting for title to fade, then don't accept input or start flashing Press Start
         backableScreen = true;
         inhale = true;
         titleCG.LeanAlpha(1.0f,1.5f);
@@ -32,12 +45,11 @@ public class TitleScreenDriver : MonoBehaviour
         screenNum = 1;
         backableScreen = true;
         StopCoroutine(PressStartFlash());
+        pressStartCG.LeanAlpha(0.0f, 0.5f);
         starButtonsCG.alpha = 1.0f;
         StartCoroutine(StarFlyIn());
         titleCG.LeanAlpha(0.0f, 0.5f);
         pressStartCG.alpha = 0.0f;
-       
-        
     }
     IEnumerator PressStartFlash(){
         if(inhale) pressStartText.text = "Press Start!";
@@ -56,15 +68,6 @@ public class TitleScreenDriver : MonoBehaviour
         starButtonsCG.gameObject.LeanMoveLocalX(0,1.75f).setEaseOutElastic();
         yield return new WaitForSecondsRealtime(2.0f);
     }
-
-    IEnumerator StarConfirmFlash(){
-        
-        for(int i = 3; i > 0; i--) {
-            StartCoroutine(StarSingleFlash());
-            yield return new WaitForSeconds(0.3f);
-        }
-    }
-
     IEnumerator StarSingleFlash(){
         starButtonsCG.LeanAlpha(0.5f,0.15f);
         yield return new WaitForSeconds(0.15f);
@@ -72,9 +75,29 @@ public class TitleScreenDriver : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
     }
 
+    IEnumerator StarConfirmFlash(){     
+        for(int i = 3; i > 0; i--) {
+            StartCoroutine(StarSingleFlash());
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
+
+    IEnumerator EnterGame(float animDelay){
+        bs.Invoke("Toggle", animDelay);
+        yield return new WaitForSeconds(animDelay + 1.5f);
+        SceneManager.LoadScene("SampleScene");
+    }
+
+
     public void NewGameButton(){
+        backableScreen = false;//locked into animation
         StartCoroutine(StarConfirmFlash());
-        //Invoke("DipToBlack", 2.0f);
+        StartCoroutine(EnterGame(0.9f));
+    }
+
+    public void QuitButton(){
+        //TODO - add confirm dialogue to quitting
+        QuitAll();
     }
 
     // Update is called once per frame
@@ -84,7 +107,6 @@ public class TitleScreenDriver : MonoBehaviour
             if(pressStartCG.alpha == 0.0f) StartCoroutine(PressStartFlash());
             if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Z)) TitleToMain();
         }
-
         if(Input.GetKeyDown(KeyCode.Escape) && backableScreen){ BackScreen();}
     }
 
@@ -97,7 +119,7 @@ public class TitleScreenDriver : MonoBehaviour
     }
 
     public void QuitAll(){
-        //TODO - add confirm dialogue to quitting
+        
         Debug.Log("Attempted quit.");
         Application.Quit(); 
     }
