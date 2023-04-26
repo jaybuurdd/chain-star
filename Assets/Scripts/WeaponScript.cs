@@ -25,7 +25,14 @@ public class WeaponScript : MonoBehaviour
             Vector2 direction = new Vector2(0f, 1f);
             Rigidbody2D ballRigidbody = otherCollider.GetComponent<Rigidbody2D>();
             ballRigidbody.AddForce(direction * forceMultiplier, ForceMode2D.Impulse);
-            scoreManager.AddPoints(hitPoints);
+            if (scoreManager != null)
+            {
+                scoreManager.AddPoints(hitPoints);
+            }
+            else
+            {
+                Debug.LogError("ScoreManager is not assigned in WeaponScript.");
+            }
         }
     }
 }
