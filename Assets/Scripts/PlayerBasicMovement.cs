@@ -18,7 +18,11 @@ public class PlayerBasicMovement : MonoBehaviour
     bool attack = false;
     bool strikeDown = false;
     bool jab = false;
+    bool arialStike = false;
     bool comboStrike = false;
+
+    private bool canDoublePress = false;
+    private float doublePressTime = 0.5f; // The time window for the double press
 
      // Start is called before the first frame update
     void Start()
@@ -33,49 +37,86 @@ public class PlayerBasicMovement : MonoBehaviour
 
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
-
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("You jumped!");
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             jump = true;
-            animator.SetBool("isJumping", true);
+            animator.SetBool("isJumping", true); 
+            
       
         }
 
-        // if strike down attack
-        if (Input.GetKeyDown(KeyCode.Z))
+        // Check if the player is in the air
+        bool inAir = !controller.m_Grounded;
+        if (inAir)
         {
-        
-            if (!attack) {
+            // Activate the ArialSpinStrike animation
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                if (!attack)
+                {
+                    if (canDoublePress && Time.time <= doublePressTime)
+                    {
+                        // Double press detected, do something
+                        Debug.Log("Double press detected!");
+                    }
+                    else
+                    {
+                        attack = arialStike = true;
+                        OnAttacking();
+
+                        canDoublePress = true;
+                        doublePressTime = Time.time + 0.5f; // Set the time window for the double press
+                    }
+                }
                 
-                attack = strikeDown = true;
-                OnAttacking();
-            }
-            attack = strikeDown = false;
-            //animator.SetBool("isStrikeDown", true);
-        } 
-
-        // if jab attack
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            if(!attack) {
+                attack = arialStike = false;
                 
-                attack = jab = true;
-                OnAttacking();
             }
-            attack = jab = false;
-        } 
+        }
+        else {
+            // if strike down attack
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+            
+                if (!attack) {
+                    
+                    attack = strikeDown = true;
+                    OnAttacking();
+                }
+                attack = strikeDown = false;
+                //animator.SetBool("isStrikeDown", true);
+            } 
 
-        // if combo strike
-        if(Input.GetKeyDown(KeyCode.C))
+            // if jab attack
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                if(!attack) {
+                    
+                    attack = jab = true;
+                    OnAttacking();
+                }
+                attack = jab = false;
+            } 
+
+            // if combo strike
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                if(!attack) {
+                    attack = comboStrike = true;
+                    OnAttacking();
+                }
+
+                attack = comboStrike = false;
+            }
+        }
+
+        // Reset the double press flag if the time window has passed
+        if (Time.time > doublePressTime)
         {
-            if(!attack) {
-                attack = comboStrike = true;
-                OnAttacking();
-            }
-
-            attack = comboStrike = false;
+            canDoublePress = false;
         }
     }
 
@@ -99,19 +140,38 @@ public class PlayerBasicMovement : MonoBehaviour
             Debug.Log("You combo striked!");
             animator.SetBool("isComboStrike",true);
         }
+
+        // Check if the player is in the air and executing the arialStrike attack
+        //bool inAir = !controller.m_Grounded;
+        if (attack && arialStike)
+        {
+            Debug.Log("You arial spin striked!");
+            animator.CrossFade("Player_Arial_Spin_Strike", 0.5f);
+            animator.SetBool("isArialSpinStrike", true);
+        }
     }
+
 
     public void OnAttackEnd()
 	{
-        
+        Debug.Log("Ending Attack");
         if(!attack && !strikeDown)
             animator.SetBool("isStrikeDown", false);
         if(!attack && !jab)
             animator.SetBool("isJab", false);
-        if(!attack && !comboStrike)
+        if(!attack && !comboStrike){
             animator.SetBool("isComboStrike", false);
-		//m_wasAttacking = false;
-		//OnAttackEvent.Invoke();
+        }
+
+        // Check if the player is in the air and executing the arialStrike attack
+        bool inAir = !controller.m_Grounded;
+        if (!attack && !arialStike)
+        {
+            Debug.Log("Arial strike ended");
+            //animator.CrossFade("Player_Jumping", 0.5f);
+            animator.SetBool("isArialSpinStrike", false);
+            
+        }
 	}
 
     

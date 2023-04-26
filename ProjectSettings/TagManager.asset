@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ball
   - Ground
+  - Border
+  - Weak Hit
+  - Head Collider
   layers:
   - Default
   - TransparentFX
