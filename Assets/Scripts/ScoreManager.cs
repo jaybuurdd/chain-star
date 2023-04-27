@@ -12,7 +12,8 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public Button replayButton;
-
+    [SerializeField]
+    BlackScreen bs;
     private int score;
     private int endScore;
 
@@ -21,7 +22,7 @@ public class ScoreManager : MonoBehaviour
     {
         score = 0;
         UpdateScoreText();
-
+        bs.Toggle();
         // hide game over and replay ui at start
         gameOverText.gameObject.SetActive(false);
         replayButton.gameObject.SetActive(false);
