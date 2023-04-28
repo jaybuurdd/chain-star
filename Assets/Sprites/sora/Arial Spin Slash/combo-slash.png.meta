@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c9831e1b528611a448aca30ada8191e3
+guid: 23ddfd8dda81b85458379c542e3e2d4a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: arial-spin-strike_0
+      name: combo-slash_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 7
-        width: 68
-        height: 57
+        x: 4
+        y: 4
+        width: 57
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0645b272fb10144193920453e23148f
-      internalID: 1575471566
+      spriteID: b5a825d183bd1894daf72ccfeeb4070a
+      internalID: -863636176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arial-spin-strike_1
+      name: combo-slash_1
       rect:
         serializedVersion: 2
-        x: 91
-        y: 7
-        width: 44
-        height: 85
+        x: 64
+        y: 4
+        width: 45
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b6f463be0bff004799c2ccdc6156d04
-      internalID: -910637256
+      spriteID: c95b05b52d0ec674ba7a6e0e320e4460
+      internalID: -1401015414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arial-spin-strike_2
+      name: combo-slash_2
       rect:
         serializedVersion: 2
-        x: 145
-        y: 7
-        width: 76
-        height: 48
+        x: 114
+        y: 4
+        width: 54
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dddcb07771c3b5459bf19621218740d
-      internalID: 1673320507
+      spriteID: 7429620657bb1df43a8b225c5aa55a29
+      internalID: -1120887404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arial-spin-strike_3
+      name: combo-slash_3
       rect:
         serializedVersion: 2
-        x: 228
-        y: 7
-        width: 46
-        height: 42
+        x: 172
+        y: 4
+        width: 72
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af5a3bc9e54b7924a8fa6f4ec71214e4
-      internalID: 1953415554
+      spriteID: eb850b08eb12bd849bade03c8beaf2c7
+      internalID: 2120862901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arial-spin-strike_4
+      name: combo-slash_4
       rect:
         serializedVersion: 2
-        x: 279
-        y: 7
-        width: 39
-        height: 52
+        x: 248
+        y: 4
+        width: 41
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 681d502c2f3824d4bab08c45b809e449
-      internalID: 2085945712
+      spriteID: 9e502691464dfff4c8f5596a9a395e2a
+      internalID: 1375196820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arial-spin-strike_5
+      name: combo-slash_5
       rect:
         serializedVersion: 2
-        x: 325
-        y: 7
-        width: 48
-        height: 46
+        x: 292
+        y: 4
+        width: 49
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8645bd0dc03b5f43b5aab23f26172e5
-      internalID: -408135980
+      spriteID: 53da32abeb49f0c4aa1988d4563f8018
+      internalID: 1911024816
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arial-spin-strike_6
+      name: combo-slash_6
       rect:
         serializedVersion: 2
-        x: 377
-        y: 7
-        width: 59
-        height: 54
+        x: 347
+        y: 4
+        width: 60
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,8 +257,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6cbb34c9f452da4a99e4e6bd20576ac
-      internalID: -551927921
+      spriteID: 449401bd8befce04a96cc3145189f835
+      internalID: -774513381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: combo-slash_7
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 4
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aecf1a6314812644497c08729d5cf9d8
+      internalID: 1021400174
       vertices: []
       indices: 
       edges: []
@@ -274,13 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      arial-spin-strike_5: -408135980
-      arial-spin-strike_2: 1673320507
-      arial-spin-strike_0: 1575471566
-      arial-spin-strike_4: 2085945712
-      arial-spin-strike_3: 1953415554
-      arial-spin-strike_6: -551927921
-      arial-spin-strike_1: -910637256
+      combo-slash_0: -863636176
+      combo-slash_1: -1401015414
+      combo-slash_3: 2120862901
+      combo-slash_5: 1911024816
+      combo-slash_6: -774513381
+      combo-slash_2: -1120887404
+      combo-slash_4: 1375196820
+      combo-slash_7: 1021400174
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

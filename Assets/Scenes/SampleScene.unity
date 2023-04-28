@@ -1713,7 +1713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a83d242e72e2a4894cdb2192805d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceMultiplier: 5
+  forceMultiplier: 10
   scoreManager: {fileID: 1765901586}
   hitPoints: 100
   weakHitEffectPrefab: {fileID: 930951870}

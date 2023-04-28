@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c9831e1b528611a448aca30ada8191e3
+guid: 3d7a13bf4d29ef548ae2ed1d9f62cbae
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,96 +117,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: arial-spin-strike_0
+      name: duplex_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 7
-        width: 68
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0645b272fb10144193920453e23148f
-      internalID: 1575471566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arial-spin-strike_1
-      rect:
-        serializedVersion: 2
-        x: 91
-        y: 7
+        x: 7
+        y: 8
         width: 44
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b6f463be0bff004799c2ccdc6156d04
-      internalID: -910637256
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arial-spin-strike_2
-      rect:
-        serializedVersion: 2
-        x: 145
-        y: 7
-        width: 76
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4dddcb07771c3b5459bf19621218740d
-      internalID: 1673320507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arial-spin-strike_3
-      rect:
-        serializedVersion: 2
-        x: 228
-        y: 7
-        width: 46
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af5a3bc9e54b7924a8fa6f4ec71214e4
-      internalID: 1953415554
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arial-spin-strike_4
-      rect:
-        serializedVersion: 2
-        x: 279
-        y: 7
-        width: 39
         height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -215,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 681d502c2f3824d4bab08c45b809e449
-      internalID: 2085945712
+      spriteID: 0ae4f0f6f839298448b65878e3972641
+      internalID: 287831045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arial-spin-strike_5
+      name: duplex_1
       rect:
         serializedVersion: 2
-        x: 325
-        y: 7
-        width: 48
-        height: 46
+        x: 68
+        y: 14
+        width: 45
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8645bd0dc03b5f43b5aab23f26172e5
-      internalID: -408135980
+      spriteID: 7cfa0a8851cc46b46aac0a09b7b4590d
+      internalID: 52205355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arial-spin-strike_6
+      name: duplex_2
       rect:
         serializedVersion: 2
-        x: 377
-        y: 7
-        width: 59
-        height: 54
+        x: 124
+        y: 8
+        width: 40
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,8 +173,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6cbb34c9f452da4a99e4e6bd20576ac
-      internalID: -551927921
+      spriteID: a6e75690376136c44935041706f48e0d
+      internalID: -1353136171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duplex_3
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 7
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e3f5c19f73bbd84ea43c266542e4d23
+      internalID: 88780754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duplex_4
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 7
+        width: 44
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7bc642b82651834d91cf2c5731afada
+      internalID: 1584931124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duplex_5
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 7
+        width: 55
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa882271c244a9b4d9407e5f447ce138
+      internalID: 1851558763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duplex_6
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 7
+        width: 32
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0700c2c37e7469458a94dcb6037a763
+      internalID: 171783415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duplex_7
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 7
+        width: 43
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192cd670006ffbb44b0c3fe558f44a1c
+      internalID: -198307412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duplex_8
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 7
+        width: 33
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d10bc044a830a4e9398bc3607c4371
+      internalID: 1536902130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duplex_9
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 7
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47295a7946c34c04dab063d2a10a4f88
+      internalID: 1807056339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: duplex_10
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 7
+        width: 52
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e610e46fc8e50cc408e2c7821193e2d3
+      internalID: -893893189
       vertices: []
       indices: 
       edges: []
@@ -274,13 +358,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      arial-spin-strike_5: -408135980
-      arial-spin-strike_2: 1673320507
-      arial-spin-strike_0: 1575471566
-      arial-spin-strike_4: 2085945712
-      arial-spin-strike_3: 1953415554
-      arial-spin-strike_6: -551927921
-      arial-spin-strike_1: -910637256
+      duplex_6: 171783415
+      duplex_2: -1353136171
+      duplex_1: 52205355
+      duplex_0: 287831045
+      duplex_10: -893893189
+      duplex_5: 1851558763
+      duplex_8: 1536902130
+      duplex_4: 1584931124
+      duplex_9: 1807056339
+      duplex_7: -198307412
+      duplex_3: 88780754
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
