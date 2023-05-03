@@ -37,6 +37,10 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreText();
     }
 
+    public int GetScore(){
+        return score;
+    }
+
     public void GameOver()
     {
         Debug.Log("Game Over triggered");
