@@ -16,6 +16,8 @@ public class CharacterController2D : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_directionLeft = false;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+	public bool isInputEnabled = true;
+	private Animator m_Animator;
 
 	[Header("Events")]
 	[Space]
@@ -34,6 +36,7 @@ public class CharacterController2D : MonoBehaviour
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+		m_Animator = GetComponent<Animator>();
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
@@ -66,19 +69,9 @@ public class CharacterController2D : MonoBehaviour
 	public void Move(float move)
 	{
 
-		//only control the player if grounded or airControl is turned on
-		if (m_Grounded || m_AirControl)
+		// //only control the player if grounded or airControl is turned on
+		if ((m_Grounded || m_AirControl))
 		{
-			// if attacking
-			// if(attack)
-			// {
-			// 	if (!m_wasAttacking)
-			// 	{
-			// 		Debug.Log("Attacking event");
-			// 		//m_wasAttacking = true;
-			// 		OnAttackEvent.Invoke();
-			// 	}
-			// }
 
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
@@ -98,13 +91,6 @@ public class CharacterController2D : MonoBehaviour
 
 	}
 
-	// public void OnAttackEnd()
-	// {
-	// 	Debug.Log("Attack ended!");
-	// 	//m_wasAttacking = false;
-	// 	OnAttackEvent.Invoke();
-	// }
-
 	private void Flip()
 	{
 		// Switch the way the player is labelled as facing.
@@ -115,4 +101,9 @@ public class CharacterController2D : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+	public bool IsFacingLeft()
+    {
+        return m_directionLeft;
+    }
 }
