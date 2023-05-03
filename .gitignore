@@ -57,14 +57,3 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
-
-# User specific settings
-UserSettings/
-
-# Layout stuff
-[Tt]emp/UnityLockfile
-[Tt]emp/Layouts
-[Tt]emp/AssetLayouts
-[Tt]emp/Unity/PackageManager
-[Tt]emp/EditorUserBuildSettings.asset
-
