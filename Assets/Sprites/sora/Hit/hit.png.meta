@@ -117,43 +117,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hit_0
+      name: 
       rect:
         serializedVersion: 2
-        x: 7
-        y: 5
-        width: 45
-        height: 45
+        x: 0
+        y: 0
+        width: 0
+        height: 0
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 54de266a61ec13c479b3909e8353a178
-      internalID: -17005004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hit_1
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 5
-        width: 33
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63afbd4414b087b43898bb077a0689ca
-      internalID: 1786313879
+      spriteID: 5e97eb03825dee720800000000000000
+      internalID: 2877471580529523173
       vertices: []
       indices: 
       edges: []
@@ -161,7 +140,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -169,8 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hit_1: 1786313879
-      hit_0: -17005004
+      : 2877471580529523173
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

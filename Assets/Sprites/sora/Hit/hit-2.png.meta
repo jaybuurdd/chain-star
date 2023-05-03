@@ -117,205 +117,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:Assets/Sprites/sora/Hit/hit-2.png.meta
-      name: hit-2_0
+      name: 
       rect:
         serializedVersion: 2
-        x: 1
-        y: 5
-        width: 39
-        height: 30
-========
-      name: throw_1_0
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 1
-        width: 40
-        height: 45
->>>>>>>> c317c77 (Final touches, might add more.):Assets/Sprites/sora/Throw/throw_1.png.meta
+        x: 0
+        y: 0
+        width: 0
+        height: 0
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-<<<<<<<< HEAD:Assets/Sprites/sora/Hit/hit-2.png.meta
-      spriteID: 700ccb8981e45fa45ba66c77c9147b51
-      internalID: -1189843914
-========
-      spriteID: c8a1c1432f945684c8bc00eea8e538d8
-      internalID: -399683496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw_1_1
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 1
-        width: 50
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2bb7827bd2dcf843aec3a42b04a9c01
-      internalID: -293719885
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw_1_2
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 1
-        width: 62
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a3bf702f255fd3419700dcd71ec6b18
-      internalID: 1971434520
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw_1_3
-      rect:
-        serializedVersion: 2
-        x: 179
-        y: 1
-        width: 55
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12fd9e4415ca49441be5a0944c877e2b
-      internalID: 618720413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw_1_4
-      rect:
-        serializedVersion: 2
-        x: 246
-        y: 1
-        width: 72
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c6318fc4c38ecd4b9c71518cf0a5ead
-      internalID: 1742726009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw_1_5
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 1
-        width: 43
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71bc9c196fe80fc4fa218e2f55ef9793
-      internalID: -825843509
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw_1_6
-      rect:
-        serializedVersion: 2
-        x: 373
-        y: 1
-        width: 46
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26cf3c1599f9a044cadb85380898c709
-      internalID: 21672751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw_1_7
-      rect:
-        serializedVersion: 2
-        x: 425
-        y: 1
-        width: 41
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f7d9884912067946a6d4e641b8884bf
-      internalID: 944008467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw_1_8
-      rect:
-        serializedVersion: 2
-        x: 471
-        y: 1
-        width: 39
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4242976cb531344e8f91d30549aaa19
-      internalID: 385178509
->>>>>>>> c317c77 (Final touches, might add more.):Assets/Sprites/sora/Throw/throw_1.png.meta
+      spriteID: 5e97eb03825dee720800000000000000
+      internalID: 2877471580529523173
       vertices: []
       indices: 
       edges: []
@@ -323,7 +140,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -331,19 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-<<<<<<<< HEAD:Assets/Sprites/sora/Hit/hit-2.png.meta
-      hit-2_0: -1189843914
-========
-      throw_1_8: 385178509
-      throw_1_7: 944008467
-      throw_1_1: -293719885
-      throw_1_6: 21672751
-      throw_1_3: 618720413
-      throw_1_2: 1971434520
-      throw_1_4: 1742726009
-      throw_1_0: -399683496
-      throw_1_5: -825843509
->>>>>>>> c317c77 (Final touches, might add more.):Assets/Sprites/sora/Throw/throw_1.png.meta
+      : 2877471580529523173
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
