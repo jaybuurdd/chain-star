@@ -7,7 +7,7 @@ using TMPro;
 public class TitleScreenDriver : MonoBehaviour
 {
     public TMP_Text versionText, pressStartText;
-    public CanvasGroup titleCG, pressStartCG, starButtonsCG;
+    public CanvasGroup titleCG, pressStartCG, starButtonsCG, infoStarCG;
     public Transform theReallyBigStar;
     public BlackScreen bs, openingTitle;
     bool inhale, backableScreen;
@@ -50,6 +50,19 @@ public class TitleScreenDriver : MonoBehaviour
         StartCoroutine(StarFlyIn());
         titleCG.LeanAlpha(0.0f, 0.5f);
         pressStartCG.alpha = 0.0f;
+    }
+    public void MainToText(bool credits){
+        StartCoroutine(StarFlyOff());
+        screenNum = 2;
+        backableScreen = true;
+        infoStarCG.transform.GetChild(0).gameObject.SetActive(credits);
+        infoStarCG.transform.GetChild(1).gameObject.SetActive(!credits);
+        infoStarCG.gameObject.LeanMoveLocalY(0,1.75f).setEaseOutQuart();
+    }
+    void TextToMain(){
+        StartCoroutine(StarFlyIn());
+        infoStarCG.gameObject.LeanMoveLocalY(-2000,1.75f).setEaseInQuart();
+        screenNum = 1;
     }
     IEnumerator PressStartFlash(){
         if(inhale) pressStartText.text = "Press Start!";
@@ -94,7 +107,9 @@ public class TitleScreenDriver : MonoBehaviour
         StartCoroutine(StarConfirmFlash());
         StartCoroutine(EnterGame(0.9f));
     }
-
+    public void GitButton(){
+        Application.OpenURL("https://github.com/jaybuurdd/chain-star/tree/master");
+    }
     public void QuitButton(){
         //TODO - add confirm dialogue to quitting
         QuitAll();
@@ -119,16 +134,14 @@ public class TitleScreenDriver : MonoBehaviour
     }
 
     public void QuitAll(){
-        
         Debug.Log("Attempted quit.");
         Application.Quit(); 
     }
 
-    void BackScreen(){
+    public void BackScreen(){
         switch(screenNum){
             case 2:
-                //close overhead menu
-                //open star menu
+                TextToMain();
                 break;
             case 1:
                 starButtonsCG.LeanAlpha(0.0f, 1.5f);
