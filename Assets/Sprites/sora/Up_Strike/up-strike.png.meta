@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b2eef08c434b8c449925f2bc37fa9ef9
+guid: c741ef011e29b8e40a07f506f959fb6e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hit_0
+      name: up-strike_0
       rect:
         serializedVersion: 2
         x: 7
-        y: 5
-        width: 45
-        height: 45
+        y: 7
+        width: 48
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54de266a61ec13c479b3909e8353a178
-      internalID: -17005004
+      spriteID: 841fcf1175d16464d8aa96c8260af56a
+      internalID: -1834884220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hit_1
+      name: up-strike_1
       rect:
         serializedVersion: 2
-        x: 56
-        y: 5
-        width: 33
-        height: 40
+        x: 63
+        y: 7
+        width: 50
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +152,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63afbd4414b087b43898bb077a0689ca
-      internalID: 1786313879
+      spriteID: 7721da2154c59fd4ca9ad27c16513eff
+      internalID: 1116699507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: up-strike_2
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 7
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80c8ca2fd437d8c418f6ab692a584245
+      internalID: 1164780482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: up-strike_3
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 7
+        width: 33
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328dcedac8e02db4f8199a5823899839
+      internalID: -1238160782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: up-strike_4
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 7
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae65a51abd8281247bae6d1d1c1f114d
+      internalID: -331833749
       vertices: []
       indices: 
       edges: []
@@ -169,8 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hit_1: 1786313879
-      hit_0: -17005004
+      up-strike_2: 1164780482
+      up-strike_0: -1834884220
+      up-strike_3: -1238160782
+      up-strike_1: 1116699507
+      up-strike_4: -331833749
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
